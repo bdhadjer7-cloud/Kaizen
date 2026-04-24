@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.shape.*?>
+
+<HBox xmlns:fx="http://javafx.com/fxml" fx:controller="controller.HomeContentController"
+      spacing="24" alignment="TOP_CENTER">
+
+    <!-- Main Content -->
+    <VBox spacing="20" HBox.hgrow="ALWAYS">
+
+        <!-- Profile Header Card -->
+        <VBox styleClass="card" spacing="12" style="-fx-background-color: #F0F2FA; -fx-background-radius: 20;">
+            <padding><Insets top="24" right="24" bottom="24" left="24"/></padding>
+            <HBox spacing="16" alignment="CENTER_LEFT">
+                <StackPane styleClass="avatar-circle" style="-fx-background-color: #7C5CFC; -fx-min-width: 64; -fx-min-height: 64; -fx-max-width: 64; -fx-max-height: 64;">
+                    <Label fx:id="profileInitials" text="SB" style="-fx-text-fill: white; -fx-font-size: 22; -fx-font-weight: bold;"/>
+                </StackPane>
+                <VBox spacing="2">
+                    <Label fx:id="profileName" text="Saffih Bouchra" style="-fx-font-size: 20; -fx-font-weight: bold; -fx-text-fill: #2B3674;"/>
+                    <Label fx:id="profileMeta" text="@bouchra . University of Oran" style="-fx-font-size: 13; -fx-text-fill: #8F9BBA;"/>
+                </VBox>
+                <Region HBox.hgrow="ALWAYS"/>
+                <Button text="Edit profile" styleClass="btn-secondary"/>
+                <Button text="Share" styleClass="btn-outline"/>
+            </HBox>
+            <Label fx:id="profileBio" wrapText="true" style="-fx-font-size: 13; -fx-text-fill: #4A5568;"/>
+
+            <!-- Tabs -->
+            <HBox spacing="24" styleClass="profile-tabs">
+                <Label fx:id="overviewTab" text="Overview" styleClass="tab-label, tab-active-label" onMouseClicked="#showOverview"/>
+                <Label fx:id="historyTab" text="Calendar &amp; History" styleClass="tab-label" onMouseClicked="#showHistory"/>
+            </HBox>
+        </VBox>
+
+        <!-- Overview Content -->
+        <VBox fx:id="overviewPane" spacing="16">
+            <!-- Stats Row -->
+            <HBox spacing="16">
+                <VBox styleClass="card" spacing="4" HBox.hgrow="ALWAYS">
+                    <Label text="Total study time" style="-fx-text-fill: #8F9BBA; -fx-font-size: 12;"/>
+                    <Label fx:id="studyTimeLabel" text="47h" style="-fx-font-size: 28; -fx-font-weight: bold; -fx-text-fill: #2B3674;"/>
+                </VBox>
+                <VBox styleClass="card" spacing="4" HBox.hgrow="ALWAYS">
+                    <Label text="Day streak" style="-fx-text-fill: #8F9BBA; -fx-font-size: 12;"/>
+                    <Label fx:id="streakLabel" text="7" style="-fx-font-size: 28; -fx-font-weight: bold; -fx-text-fill: #2B3674;"/>
+                </VBox>
+                <VBox styleClass="card" spacing="8" HBox.hgrow="ALWAYS">
+                    <Label text="Latest badges" style="-fx-text-fill: #8F9BBA; -fx-font-size: 12;"/>
+                    <HBox fx:id="badgesBox" spacing="12"/>
+                </VBox>
+            </HBox>
+
+            <!-- XP Card -->
+            <VBox styleClass="card" spacing="4">
+                <Label fx:id="xpLabel" text="2,840" style="-fx-font-size: 32; -fx-font-weight: bold; -fx-text-fill: #2B3674;"/>
+                <Label text="Total XP earned" style="-fx-text-fill: #8F9BBA; -fx-font-size: 13;"/>
+            </VBox>
+
+            <!-- Recent Courses -->
+            <VBox styleClass="card" spacing="12">
+                <HBox alignment="CENTER_LEFT">
+                    <Label text="Recent courses" style="-fx-font-size: 16; -fx-font-weight: bold; -fx-text-fill: #2B3674;"/>
+                    <Region HBox.hgrow="ALWAYS"/>
+                    <Hyperlink text="See all"/>
+                </HBox>
+                <VBox fx:id="recentCoursesBox" spacing="8"/>
+            </VBox>
+        </VBox>
+
+        <!-- History Content (hidden by default) -->
+        <VBox fx:id="historyPane" spacing="16" visible="false" managed="false">
+            <!-- Calendar Heatmap placeholder -->
+            <VBox styleClass="card" spacing="8">
+                <Label text="Last 6 months" style="-fx-font-size: 16; -fx-font-weight: bold; -fx-text-fill: #2B3674;"/>
+                <FlowPane fx:id="calendarHeatmap" hgap="4" vgap="4"/>
+            </VBox>
+
+            <HBox spacing="16">
+                <!-- Study History -->
+                <VBox styleClass="card" spacing="12" HBox.hgrow="ALWAYS">
+                    <Label text="Study history" style="-fx-font-size: 16; -fx-font-weight: bold; -fx-text-fill: #2B3674;"/>
+                    <VBox fx:id="historyList" spacing="8"/>
+                </VBox>
+
+                <!-- This week at a glance -->
+                <VBox styleClass="card" spacing="12" style="-fx-min-width: 300;">
+                    <Label text="This week at a glance" style="-fx-font-size: 16; -fx-font-weight: bold; -fx-text-fill: #2B3674;"/>
+                    <VBox style="-fx-background-color: #7C5CFC; -fx-background-radius: 12; -fx-padding: 12;">
+                        <Label text="8h 30m" style="-fx-font-size: 22; -fx-font-weight: bold; -fx-text-fill: white;"/>
+                        <Label text="Total study time this week" style="-fx-text-fill: rgba(255,255,255,0.8); -fx-font-size: 12;"/>
+                    </VBox>
+                    <HBox spacing="8">
+                        <VBox style="-fx-background-color: #E8ECF8; -fx-background-radius: 10; -fx-padding: 10;" HBox.hgrow="ALWAYS">
+                            <Label text="4" style="-fx-font-size: 18; -fx-font-weight: bold; -fx-text-fill: #2B3674;"/>
+                            <Label text="Lessons done" style="-fx-font-size: 11; -fx-text-fill: #8F9BBA;"/>
+                        </VBox>
+                        <VBox style="-fx-background-color: #F3E8FF; -fx-background-radius: 10; -fx-padding: 10;" HBox.hgrow="ALWAYS">
+                            <Label text="6" style="-fx-font-size: 18; -fx-font-weight: bold; -fx-text-fill: #2B3674;"/>
+                            <Label text="Pomodoros" style="-fx-font-size: 11; -fx-text-fill: #8F9BBA;"/>
+                        </VBox>
+                    </HBox>
+                    <HBox spacing="8">
+                        <VBox style="-fx-background-color: #E8ECF8; -fx-background-radius: 10; -fx-padding: 10;" HBox.hgrow="ALWAYS">
+                            <Label text="7" style="-fx-font-size: 18; -fx-font-weight: bold; -fx-text-fill: #2B3674;"/>
+                            <Label text="Day streak" style="-fx-font-size: 11; -fx-text-fill: #8F9BBA;"/>
+                        </VBox>
+                        <VBox style="-fx-background-color: #F3E8FF; -fx-background-radius: 10; -fx-padding: 10;" HBox.hgrow="ALWAYS">
+                            <Label text="+155" style="-fx-font-size: 18; -fx-font-weight: bold; -fx-text-fill: #2B3674;"/>
+                            <Label text="XP this week" style="-fx-font-size: 11; -fx-text-fill: #8F9BBA;"/>
+                        </VBox>
+                    </HBox>
+                </VBox>
+            </HBox>
+        </VBox>
+    </VBox>
+
+    <!-- Right Sidebar -->
+    <VBox spacing="16" style="-fx-min-width: 220; -fx-max-width: 240;">
+        <!-- MY PROGRESS -->
+        <VBox styleClass="card" spacing="8" alignment="CENTER">
+            <Label text="MY PROGRESS" style="-fx-font-size: 11; -fx-font-weight: bold; -fx-text-fill: #8F9BBA; -fx-letter-spacing: 2;"/>
+            <ImageView fitHeight="80" preserveRatio="true" fx:id="mascotSmall"/>
+            <VBox style="-fx-background-color: #2B3674; -fx-background-radius: 12; -fx-padding: 12;" alignment="CENTER">
+                <Label text="Total XP" style="-fx-text-fill: rgba(255,255,255,0.7); -fx-font-size: 10;"/>
+                <Label fx:id="xpSidebar" text="2,840" style="-fx-text-fill: white; -fx-font-size: 24; -fx-font-weight: bold;"/>
+                <Label fx:id="rankLabel" text="160 XP to rank up . Master" style="-fx-text-fill: rgba(255,255,255,0.6); -fx-font-size: 10;"/>
+                <ProgressBar progress="0.85" prefWidth="180" style="-fx-accent: #4361EE;"/>
+            </VBox>
+        </VBox>
+
+        <!-- Badges / Gakusha -->
+        <VBox styleClass="card" spacing="8" style="-fx-background-color: #2B3674; -fx-background-radius: 16;">
+            <Label text="Gakusha" style="-fx-text-fill: white; -fx-font-size: 18; -fx-font-weight: bold;"/>
+            <Label text="Unlock the gosha level" style="-fx-text-fill: rgba(255,255,255,0.6); -fx-font-size: 11;"/>
+        </VBox>
+
+        <!-- Study and unlock new badges -->
+        <VBox styleClass="card" spacing="8">
+            <Label text="Study and unlock new badges" style="-fx-font-size: 12; -fx-font-weight: bold; -fx-text-fill: #2B3674;"/>
+            <FlowPane fx:id="badgeGrid" hgap="8" vgap="8"/>
+        </VBox>
+    </VBox>
+</HBox>

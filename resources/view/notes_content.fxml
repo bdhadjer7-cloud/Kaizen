@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<HBox xmlns:fx="http://javafx.com/fxml" fx:controller="controller.NotesContentController" spacing="0">
+
+    <!-- Note List -->
+    <VBox spacing="0" style="-fx-min-width: 260; -fx-max-width: 280; -fx-background-color: white; -fx-border-color: transparent #E0E5F2 transparent transparent;">
+        <padding><Insets top="12"/></padding>
+        <HBox spacing="8" alignment="CENTER_LEFT" style="-fx-padding: 0 16 8 16;">
+            <TextField promptText="Search notes..." styleClass="search-field" HBox.hgrow="ALWAYS"/>
+            <Button text="+" style="-fx-background-color: #4361EE; -fx-text-fill: white; -fx-background-radius: 50; -fx-min-width: 32; -fx-min-height: 32; -fx-cursor: hand; -fx-font-size: 16;"/>
+        </HBox>
+        <Separator/>
+        <Label text="All Notes" style="-fx-font-size: 11; -fx-font-weight: bold; -fx-text-fill: #8F9BBA; -fx-padding: 8 16;"/>
+        <VBox fx:id="noteList" spacing="0"/>
+    </VBox>
+
+    <!-- Note Editor -->
+    <VBox spacing="12" HBox.hgrow="ALWAYS">
+        <padding><Insets top="16" right="24" bottom="16" left="24"/></padding>
+        <HBox alignment="CENTER_LEFT">
+            <Label fx:id="noteTitle" text="Eigenvalues Formula" style="-fx-font-size: 20; -fx-font-weight: bold; -fx-text-fill: #2B3674;"/>
+            <Region HBox.hgrow="ALWAYS"/>
+            <Label text="Linear Algebra" style="-fx-background-color: #E3F2FD; -fx-text-fill: #1565C0; -fx-padding: 4 12; -fx-background-radius: 20; -fx-font-size: 11;"/>
+        </HBox>
+        <Label text="Last edited: Today at 14:23" style="-fx-font-size: 11; -fx-text-fill: #8F9BBA;"/>
+        <TextArea fx:id="noteEditor" VBox.vgrow="ALWAYS"
+                  style="-fx-font-size: 14; -fx-border-color: transparent;"
+                  text="det(A - \u03BBI) = 0&#10;&#10;For 2x2:&#10;\u03BB\u00B2 - tr(A)\u03BB + det(A) = 0&#10;&#10;Steps:&#10;1. Write (A - \u03BBI)&#10;2. Compute determinant&#10;3. Solve for \u03BB"/>
+        <HBox spacing="8" alignment="CENTER_RIGHT">
+            <Button text="Delete" style="-fx-background-color: #FFEBEE; -fx-text-fill: #E53E3E; -fx-background-radius: 10; -fx-padding: 8 16; -fx-cursor: hand;"/>
+            <Button text="Save" style="-fx-background-color: #4361EE; -fx-text-fill: white; -fx-background-radius: 10; -fx-padding: 8 24; -fx-font-weight: bold; -fx-cursor: hand;"/>
+        </HBox>
+    </VBox>
+</HBox>

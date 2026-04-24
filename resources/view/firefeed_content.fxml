@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<HBox xmlns:fx="http://javafx.com/fxml" fx:controller="controller.FireFeedContentController" spacing="24">
+    <!-- Main Feed -->
+    <VBox spacing="16" HBox.hgrow="ALWAYS">
+        <!-- Compose -->
+        <VBox styleClass="card" spacing="12">
+            <HBox spacing="12" alignment="CENTER_LEFT">
+                <StackPane style="-fx-background-color: #4361EE; -fx-background-radius: 50; -fx-min-width: 40; -fx-min-height: 40; -fx-max-width: 40; -fx-max-height: 40;">
+                    <Label text="SB" style="-fx-text-fill: white; -fx-font-weight: bold; -fx-font-size: 14;"/>
+                </StackPane>
+                <TextField fx:id="composeField" promptText="What did you learn today?" styleClass="auth-field" HBox.hgrow="ALWAYS"/>
+            </HBox>
+            <HBox spacing="8" alignment="CENTER_RIGHT">
+                <Button text="Tag" style="-fx-background-color: #F4F7FE; -fx-text-fill: #4361EE; -fx-background-radius: 10; -fx-padding: 6 12; -fx-font-size: 12; -fx-cursor: hand;"/>
+                <Button text="Post" onAction="#handlePost" style="-fx-background-color: #4361EE; -fx-text-fill: white; -fx-background-radius: 10; -fx-padding: 6 16; -fx-font-size: 12; -fx-font-weight: bold; -fx-cursor: hand;"/>
+            </HBox>
+        </VBox>
+
+        <!-- Posts -->
+        <VBox fx:id="postList" spacing="16"/>
+    </VBox>
+
+    <!-- Right Panel -->
+    <VBox spacing="16" style="-fx-min-width: 240; -fx-max-width: 260;">
+        <!-- Top Contributors -->
+        <VBox styleClass="card" spacing="8">
+            <Label text="TOP CONTRIBUTORS" style="-fx-font-size: 11; -fx-font-weight: bold; -fx-text-fill: #8F9BBA;"/>
+            <VBox fx:id="contributorsList" spacing="6"/>
+        </VBox>
+        <!-- Popular Tags -->
+        <VBox styleClass="card" spacing="8">
+            <Label text="POPULAR TAGS" style="-fx-font-size: 11; -fx-font-weight: bold; -fx-text-fill: #8F9BBA;"/>
+            <FlowPane fx:id="tagCloud" hgap="6" vgap="6"/>
+        </VBox>
+        <!-- Discover Communities -->
+        <VBox styleClass="card" spacing="8">
+            <Label text="DISCOVER" style="-fx-font-size: 11; -fx-font-weight: bold; -fx-text-fill: #8F9BBA;"/>
+            <Label text="Join study communities and share knowledge with other students." wrapText="true" style="-fx-font-size: 12; -fx-text-fill: #8F9BBA;"/>
+        </VBox>
+    </VBox>
+</HBox>

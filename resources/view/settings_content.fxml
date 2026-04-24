@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<HBox xmlns:fx="http://javafx.com/fxml" fx:controller="controller.SettingsContentController" spacing="0">
+
+    <!-- Settings Navigation -->
+    <VBox spacing="0" style="-fx-min-width: 200; -fx-max-width: 200; -fx-background-color: white; -fx-border-color: transparent #E0E5F2 transparent transparent;">
+        <padding><Insets top="12"/></padding>
+        <Button fx:id="profileTab" text="  Profile" styleClass="sidebar-item, sidebar-active" onAction="#showProfile"/>
+        <Button fx:id="securityTab" text="  Security" styleClass="sidebar-item" onAction="#showSecurity"/>
+        <Button fx:id="notifTab" text="  Notifications" styleClass="sidebar-item" onAction="#showNotifications"/>
+        <Button fx:id="studyTab" text="  Study Prefs" styleClass="sidebar-item" onAction="#showStudyPrefs"/>
+        <Button fx:id="appearTab" text="  Appearances" styleClass="sidebar-item" onAction="#showAppearance"/>
+    </VBox>
+
+    <!-- Settings Content -->
+    <VBox spacing="16" HBox.hgrow="ALWAYS">
+        <padding><Insets top="16" right="24" bottom="24" left="24"/></padding>
+
+        <!-- Profile Section -->
+        <VBox fx:id="profilePane" spacing="16">
+            <Label text="Profile Settings" style="-fx-font-size: 20; -fx-font-weight: bold; -fx-text-fill: #2B3674;"/>
+            <VBox styleClass="card" spacing="12">
+                <HBox spacing="16" alignment="CENTER_LEFT">
+                    <StackPane style="-fx-background-color: #7C5CFC; -fx-background-radius: 50; -fx-min-width: 64; -fx-min-height: 64; -fx-max-width: 64; -fx-max-height: 64;">
+                        <Label fx:id="avatarInitial" text="SB" style="-fx-text-fill: white; -fx-font-size: 22; -fx-font-weight: bold;"/>
+                    </StackPane>
+                    <VBox spacing="4">
+                        <Button text="Change Avatar" style="-fx-background-color: #4361EE; -fx-text-fill: white; -fx-background-radius: 10; -fx-padding: 6 16; -fx-cursor: hand;"/>
+                        <Label text="JPG, PNG or SVG. Max 2MB" style="-fx-font-size: 10; -fx-text-fill: #8F9BBA;"/>
+                    </VBox>
+                </HBox>
+
+                <HBox spacing="12">
+                    <VBox spacing="4" HBox.hgrow="ALWAYS">
+                        <Label text="Full Name" style="-fx-font-size: 12; -fx-font-weight: bold; -fx-text-fill: #2B3674;"/>
+                        <TextField fx:id="nameField" text="Saffih Bouchra" styleClass="auth-field"/>
+                    </VBox>
+                    <VBox spacing="4" HBox.hgrow="ALWAYS">
+                        <Label text="Username" style="-fx-font-size: 12; -fx-font-weight: bold; -fx-text-fill: #2B3674;"/>
+                        <TextField fx:id="usernameField" text="bouchra" styleClass="auth-field"/>
+                    </VBox>
+                </HBox>
+
+                <VBox spacing="4">
+                    <Label text="Email" style="-fx-font-size: 12; -fx-font-weight: bold; -fx-text-fill: #2B3674;"/>
+                    <TextField fx:id="emailField" text="bouchra@univ-oran.dz" styleClass="auth-field"/>
+                </VBox>
+
+                <VBox spacing="4">
+                    <Label text="University" style="-fx-font-size: 12; -fx-font-weight: bold; -fx-text-fill: #2B3674;"/>
+                    <TextField fx:id="universityField" text="University of Oran" styleClass="auth-field"/>
+                </VBox>
+
+                <VBox spacing="4">
+                    <Label text="Bio" style="-fx-font-size: 12; -fx-font-weight: bold; -fx-text-fill: #2B3674;"/>
+                    <TextArea fx:id="bioField" prefRowCount="3" styleClass="auth-field" style="-fx-padding: 8;"
+                              text="Computer science student passionate about building collaborative study tools."/>
+                </VBox>
+
+                <Label fx:id="profileMsg" visible="false" managed="false"/>
+
+                <HBox spacing="12" alignment="CENTER_RIGHT">
+                    <Button text="Cancel" style="-fx-background-color: #F4F7FE; -fx-text-fill: #2B3674; -fx-background-radius: 10; -fx-padding: 8 20; -fx-cursor: hand;"/>
+                    <Button text="Save Changes" onAction="#saveProfile" style="-fx-background-color: #4361EE; -fx-text-fill: white; -fx-background-radius: 10; -fx-padding: 8 20; -fx-font-weight: bold; -fx-cursor: hand;"/>
+                </HBox>
+            </VBox>
+        </VBox>
+
+        <!-- Security Section -->
+        <VBox fx:id="securityPane" spacing="16" visible="false" managed="false">
+            <Label text="Security Settings" style="-fx-font-size: 20; -fx-font-weight: bold; -fx-text-fill: #2B3674;"/>
+            <VBox styleClass="card" spacing="12">
+                <Label text="Change Password" style="-fx-font-size: 16; -fx-font-weight: bold; -fx-text-fill: #2B3674;"/>
+                <VBox spacing="4">
+                    <Label text="Current Password" style="-fx-font-size: 12; -fx-font-weight: bold; -fx-text-fill: #2B3674;"/>
+                    <PasswordField fx:id="currentPassField" styleClass="auth-field"/>
+                </VBox>
+                <VBox spacing="4">
+                    <Label text="New Password" style="-fx-font-size: 12; -fx-font-weight: bold; -fx-text-fill: #2B3674;"/>
+                    <PasswordField fx:id="newPassField" styleClass="auth-field"/>
+                </VBox>
+                <VBox spacing="4">
+                    <Label text="Confirm New Password" style="-fx-font-size: 12; -fx-font-weight: bold; -fx-text-fill: #2B3674;"/>
+                    <PasswordField fx:id="confirmPassField" styleClass="auth-field"/>
+                </VBox>
+                <Label fx:id="securityMsg" visible="false" managed="false"/>
+                <Button text="Update Password" onAction="#updatePassword" style="-fx-background-color: #4361EE; -fx-text-fill: white; -fx-background-radius: 10; -fx-padding: 8 20; -fx-font-weight: bold; -fx-cursor: hand;"/>
+            </VBox>
+            <VBox styleClass="card" spacing="8">
+                <Label text="Two-Factor Authentication" style="-fx-font-size: 16; -fx-font-weight: bold; -fx-text-fill: #2B3674;"/>
+                <Label text="Add an extra layer of security to your account." style="-fx-font-size: 12; -fx-text-fill: #8F9BBA;"/>
+                <Button text="Enable 2FA" style="-fx-background-color: #48BB78; -fx-text-fill: white; -fx-background-radius: 10; -fx-padding: 8 16; -fx-cursor: hand;"/>
+            </VBox>
+        </VBox>
+
+        <!-- Notifications Section -->
+        <VBox fx:id="notifPane" spacing="16" visible="false" managed="false">
+            <Label text="Notification Preferences" style="-fx-font-size: 20; -fx-font-weight: bold; -fx-text-fill: #2B3674;"/>
+            <VBox styleClass="card" spacing="12">
+                <HBox alignment="CENTER_LEFT"><Label text="Email notifications" style="-fx-font-size: 14; -fx-text-fill: #2B3674;" HBox.hgrow="ALWAYS"/><Region HBox.hgrow="ALWAYS"/><CheckBox selected="true"/></HBox>
+                <HBox alignment="CENTER_LEFT"><Label text="Study reminders" style="-fx-font-size: 14; -fx-text-fill: #2B3674;" HBox.hgrow="ALWAYS"/><Region HBox.hgrow="ALWAYS"/><CheckBox selected="true"/></HBox>
+                <HBox alignment="CENTER_LEFT"><Label text="New message alerts" style="-fx-font-size: 14; -fx-text-fill: #2B3674;" HBox.hgrow="ALWAYS"/><Region HBox.hgrow="ALWAYS"/><CheckBox selected="true"/></HBox>
+                <HBox alignment="CENTER_LEFT"><Label text="Course updates" style="-fx-font-size: 14; -fx-text-fill: #2B3674;" HBox.hgrow="ALWAYS"/><Region HBox.hgrow="ALWAYS"/><CheckBox selected="true"/></HBox>
+                <HBox alignment="CENTER_LEFT"><Label text="Badge earned" style="-fx-font-size: 14; -fx-text-fill: #2B3674;" HBox.hgrow="ALWAYS"/><Region HBox.hgrow="ALWAYS"/><CheckBox selected="true"/></HBox>
+                <HBox alignment="CENTER_LEFT"><Label text="Weekly report" style="-fx-font-size: 14; -fx-text-fill: #2B3674;" HBox.hgrow="ALWAYS"/><Region HBox.hgrow="ALWAYS"/><CheckBox/></HBox>
+            </VBox>
+        </VBox>
+
+        <!-- Study Prefs Section -->
+        <VBox fx:id="studyPane" spacing="16" visible="false" managed="false">
+            <Label text="Study Preferences" style="-fx-font-size: 20; -fx-font-weight: bold; -fx-text-fill: #2B3674;"/>
+            <VBox styleClass="card" spacing="12">
+                <VBox spacing="4">
+                    <Label text="Default Pomodoro Duration" style="-fx-font-size: 14; -fx-font-weight: bold; -fx-text-fill: #2B3674;"/>
+                    <ComboBox prefWidth="200" value="25 minutes">
+                        <items><javafx.collections.FXCollections fx:factory="observableArrayList"><String fx:value="25 minutes"/><String fx:value="50 minutes"/><String fx:value="90 minutes"/></javafx.collections.FXCollections></items>
+                    </ComboBox>
+                </VBox>
+                <VBox spacing="4">
+                    <Label text="Break Duration" style="-fx-font-size: 14; -fx-font-weight: bold; -fx-text-fill: #2B3674;"/>
+                    <ComboBox prefWidth="200" value="5 minutes">
+                        <items><javafx.collections.FXCollections fx:factory="observableArrayList"><String fx:value="5 minutes"/><String fx:value="10 minutes"/><String fx:value="15 minutes"/></javafx.collections.FXCollections></items>
+                    </ComboBox>
+                </VBox>
+                <HBox alignment="CENTER_LEFT"><Label text="Auto-start breaks" style="-fx-font-size: 14; -fx-text-fill: #2B3674;" HBox.hgrow="ALWAYS"/><Region HBox.hgrow="ALWAYS"/><CheckBox/></HBox>
+                <HBox alignment="CENTER_LEFT"><Label text="Sound alerts" style="-fx-font-size: 14; -fx-text-fill: #2B3674;" HBox.hgrow="ALWAYS"/><Region HBox.hgrow="ALWAYS"/><CheckBox selected="true"/></HBox>
+                <HBox alignment="CENTER_LEFT"><Label text="Daily goal reminder" style="-fx-font-size: 14; -fx-text-fill: #2B3674;" HBox.hgrow="ALWAYS"/><Region HBox.hgrow="ALWAYS"/><CheckBox selected="true"/></HBox>
+            </VBox>
+        </VBox>
+
+        <!-- Appearances Section -->
+        <VBox fx:id="appearPane" spacing="16" visible="false" managed="false">
+            <Label text="Appearance Settings" style="-fx-font-size: 20; -fx-font-weight: bold; -fx-text-fill: #2B3674;"/>
+            <VBox styleClass="card" spacing="12">
+                <VBox spacing="4">
+                    <Label text="Theme" style="-fx-font-size: 14; -fx-font-weight: bold; -fx-text-fill: #2B3674;"/>
+                    <HBox spacing="12">
+                        <VBox alignment="CENTER" spacing="4" style="-fx-background-color: #E8ECF8; -fx-background-radius: 12; -fx-padding: 16; -fx-cursor: hand; -fx-border-color: #4361EE; -fx-border-radius: 12; -fx-border-width: 2;">
+                            <Region style="-fx-background-color: white; -fx-background-radius: 8; -fx-min-width: 60; -fx-min-height: 40;"/>
+                            <Label text="Light" style="-fx-font-size: 12; -fx-text-fill: #2B3674;"/>
+                        </VBox>
+                        <VBox alignment="CENTER" spacing="4" style="-fx-background-color: #2B3674; -fx-background-radius: 12; -fx-padding: 16; -fx-cursor: hand;">
+                            <Region style="-fx-background-color: #1A1F3C; -fx-background-radius: 8; -fx-min-width: 60; -fx-min-height: 40;"/>
+                            <Label text="Dark" style="-fx-font-size: 12; -fx-text-fill: white;"/>
+                        </VBox>
+                    </HBox>
+                </VBox>
+                <VBox spacing="4">
+                    <Label text="Accent Color" style="-fx-font-size: 14; -fx-font-weight: bold; -fx-text-fill: #2B3674;"/>
+                    <HBox spacing="8">
+                        <Region style="-fx-background-color: #4361EE; -fx-background-radius: 50; -fx-min-width: 32; -fx-min-height: 32; -fx-cursor: hand; -fx-border-color: #2B3674; -fx-border-radius: 50; -fx-border-width: 2;"/>
+                        <Region style="-fx-background-color: #7C5CFC; -fx-background-radius: 50; -fx-min-width: 32; -fx-min-height: 32; -fx-cursor: hand;"/>
+                        <Region style="-fx-background-color: #E07B4C; -fx-background-radius: 50; -fx-min-width: 32; -fx-min-height: 32; -fx-cursor: hand;"/>
+                        <Region style="-fx-background-color: #48BB78; -fx-background-radius: 50; -fx-min-width: 32; -fx-min-height: 32; -fx-cursor: hand;"/>
+                        <Region style="-fx-background-color: #E53E3E; -fx-background-radius: 50; -fx-min-width: 32; -fx-min-height: 32; -fx-cursor: hand;"/>
+                    </HBox>
+                </VBox>
+                <VBox spacing="4">
+                    <Label text="Font Size" style="-fx-font-size: 14; -fx-font-weight: bold; -fx-text-fill: #2B3674;"/>
+                    <HBox spacing="12">
+                        <Button text="Small" style="-fx-background-color: #F4F7FE; -fx-text-fill: #2B3674; -fx-background-radius: 10; -fx-padding: 6 16;"/>
+                        <Button text="Medium" style="-fx-background-color: #4361EE; -fx-text-fill: white; -fx-background-radius: 10; -fx-padding: 6 16;"/>
+                        <Button text="Large" style="-fx-background-color: #F4F7FE; -fx-text-fill: #2B3674; -fx-background-radius: 10; -fx-padding: 6 16;"/>
+                    </HBox>
+                </VBox>
+            </VBox>
+        </VBox>
+    </VBox>
+</HBox>

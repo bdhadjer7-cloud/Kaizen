@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<HBox xmlns:fx="http://javafx.com/fxml" fx:controller="controller.CoursesContentController" spacing="24">
+
+    <!-- Main Content -->
+    <VBox spacing="16" HBox.hgrow="ALWAYS">
+        <!-- Filter tabs -->
+        <HBox spacing="16" alignment="CENTER_LEFT">
+            <Button text="All Courses" styleClass="tab-btn, tab-active" fx:id="allTab"/>
+            <Button text="In Progress" styleClass="tab-btn"/>
+            <Button text="Completed" styleClass="tab-btn"/>
+        </HBox>
+        <HBox spacing="12">
+            <ComboBox fx:id="subjectFilter" promptText="Subject" prefWidth="120"/>
+            <ComboBox fx:id="levelFilter" promptText="Level" prefWidth="120"/>
+            <ComboBox fx:id="statusFilter" promptText="Status" prefWidth="120"/>
+        </HBox>
+
+        <!-- Course Cards -->
+        <VBox fx:id="courseList" spacing="16"/>
+    </VBox>
+
+    <!-- Right Sidebar -->
+    <VBox spacing="16" style="-fx-min-width: 220; -fx-max-width: 240;">
+        <!-- MY PROGRESS -->
+        <VBox styleClass="card" spacing="8" alignment="CENTER">
+            <Label text="MY PROGRESS" style="-fx-font-size: 11; -fx-font-weight: bold; -fx-text-fill: #8F9BBA;"/>
+            <VBox style="-fx-background-color: #E8ECF8; -fx-background-radius: 12; -fx-padding: 12;" alignment="CENTER" spacing="4">
+                <Label fx:id="xpLabel" text="2,840" style="-fx-font-size: 24; -fx-font-weight: bold; -fx-text-fill: #4361EE;"/>
+                <ProgressBar progress="0.85" prefWidth="180"/>
+            </VBox>
+            <HBox spacing="8">
+                <VBox styleClass="stat-box" HBox.hgrow="ALWAYS" alignment="CENTER">
+                    <Label text="3" style="-fx-font-size: 18; -fx-font-weight: bold; -fx-text-fill: #48BB78;"/>
+                    <Label text="Courses" style="-fx-font-size: 10; -fx-text-fill: #8F9BBA;"/>
+                </VBox>
+                <VBox styleClass="stat-box" HBox.hgrow="ALWAYS" alignment="CENTER">
+                    <Label text="21" style="-fx-font-size: 18; -fx-font-weight: bold; -fx-text-fill: #48BB78;"/>
+                    <Label text="Lessons" style="-fx-font-size: 10; -fx-text-fill: #8F9BBA;"/>
+                </VBox>
+            </HBox>
+            <HBox spacing="8">
+                <VBox styleClass="stat-box" HBox.hgrow="ALWAYS" alignment="CENTER">
+                    <Label text="7" style="-fx-font-size: 18; -fx-font-weight: bold; -fx-text-fill: #48BB78;"/>
+                    <Label text="Day streak" style="-fx-font-size: 10; -fx-text-fill: #8F9BBA;"/>
+                </VBox>
+                <VBox styleClass="stat-box" HBox.hgrow="ALWAYS" alignment="CENTER">
+                    <Label text="5/6" style="-fx-font-size: 18; -fx-font-weight: bold; -fx-text-fill: #48BB78;"/>
+                    <Label text="Quizzes" style="-fx-font-size: 10; -fx-text-fill: #8F9BBA;"/>
+                </VBox>
+            </HBox>
+        </VBox>
+
+        <!-- Online Classmates -->
+        <VBox styleClass="card" spacing="8">
+            <Label text="ONLINE CLASSMATES" style="-fx-font-size: 11; -fx-font-weight: bold; -fx-text-fill: #8F9BBA;"/>
+            <VBox fx:id="classmatesList" spacing="6"/>
+        </VBox>
+    </VBox>
+</HBox>

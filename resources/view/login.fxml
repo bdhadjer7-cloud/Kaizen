@@ -71,7 +71,7 @@
         <!-- Right Panel - Illustration -->
         <VBox alignment="CENTER" spacing="12" styleClass="login-illust-panel" HBox.hgrow="ALWAYS">
             <Label text="K a i z e n" styleClass="brand-title"/>
-            <Label text="\u6539 \u5584" styleClass="brand-jp"/>
+            <Label text="&#x6539; &#x5584;" styleClass="brand-jp"/>
             <Label text="Continuous Improvement" styleClass="brand-subtitle"/>
             <Region prefHeight="20"/>
             <ImageView fx:id="mascotImage" fitHeight="280" preserveRatio="true"/>

@@ -14,9 +14,9 @@
             <Label fx:id="timerLabel" text="25:00" style="-fx-font-size: 64; -fx-font-weight: bold; -fx-text-fill: white;"/>
             <Label fx:id="modeLabel" text="Focus Session" style="-fx-font-size: 16; -fx-text-fill: rgba(255,255,255,0.7);"/>
             <HBox spacing="16" alignment="CENTER">
-                <Button fx:id="startBtn" text="\u25B6  Start" onAction="#handleStartPause"
+                <Button fx:id="startBtn" text="&#x25B6;  Start" onAction="#handleStartPause"
                         style="-fx-background-color: #4361EE; -fx-text-fill: white; -fx-font-size: 16; -fx-font-weight: bold; -fx-padding: 12 32; -fx-background-radius: 14; -fx-cursor: hand;"/>
-                <Button text="\u21BA  Reset" onAction="#handleReset"
+                <Button text="&#x21BA;  Reset" onAction="#handleReset"
                         style="-fx-background-color: rgba(255,255,255,0.15); -fx-text-fill: white; -fx-font-size: 14; -fx-padding: 10 24; -fx-background-radius: 14; -fx-cursor: hand;"/>
             </HBox>
             <HBox spacing="12" alignment="CENTER">
@@ -49,7 +49,7 @@
 
         <!-- Streak -->
         <VBox styleClass="card" spacing="8" alignment="CENTER">
-            <Label text="\uD83D\uDD25" style="-fx-font-size: 32;"/>
+            <Label text="&#x1F525;" style="-fx-font-size: 32;"/>
             <Label text="7 Day Streak" style="-fx-font-size: 18; -fx-font-weight: bold; -fx-text-fill: #2B3674;"/>
             <Label text="Keep it going!" style="-fx-font-size: 12; -fx-text-fill: #8F9BBA;"/>
             <HBox fx:id="streakDots" spacing="6" alignment="CENTER"/>

@@ -41,30 +41,30 @@
         <Label text="12 min read  .  Linear Algebra  .  Intermediate" style="-fx-font-size: 12; -fx-text-fill: #8F9BBA;"/>
 
         <Label wrapText="true" style="-fx-font-size: 14; -fx-text-fill: #4A5568; -fx-line-spacing: 4;"
-               text="An eigenvector of a square matrix A is a non-zero vector v such that multiplying A by v only changes the scale of v, never its direction. The scalar \u03BB by which it is scaled is called the eigenvalue."/>
+               text="An eigenvector of a square matrix A is a non-zero vector v such that multiplying A by v only changes the scale of v, never its direction. The scalar &#x03BB; by which it is scaled is called the eigenvalue."/>
 
         <!-- Core Definition Box -->
         <VBox style="-fx-background-color: #E8F5E9; -fx-background-radius: 12; -fx-padding: 16;">
             <Label text="CORE DEFINITION" style="-fx-font-size: 11; -fx-font-weight: bold; -fx-text-fill: #2E7D32;"/>
-            <Label text="A\u00B7v = \u03BB\u00B7v" style="-fx-font-size: 20; -fx-font-weight: bold; -fx-text-fill: #2B3674;"/>
+            <Label text="A&#x00B7;v = &#x03BB;&#x00B7;v" style="-fx-font-size: 20; -fx-font-weight: bold; -fx-text-fill: #2B3674;"/>
         </VBox>
 
         <Label wrapText="true" style="-fx-font-size: 14; -fx-text-fill: #4A5568; -fx-line-spacing: 4;"
-               text="Think of it this way: most vectors get rotated when you multiply them by a matrix. Eigenvectors are special -- they only get stretched or compressed, never tilted. The eigenvalue \u03BB tells you exactly"/>
+               text="Think of it this way: most vectors get rotated when you multiply them by a matrix. Eigenvectors are special -- they only get stretched or compressed, never tilted. The eigenvalue &#x03BB; tells you exactly"/>
 
         <!-- Info box -->
         <VBox style="-fx-background-color: #FFF8E1; -fx-background-radius: 12; -fx-padding: 16; -fx-border-color: #FFE082; -fx-border-radius: 12;">
             <Label wrapText="true" style="-fx-font-size: 13; -fx-text-fill: #4A5568;"
-                   text="If \u03BB > 1 the vector is stretched. If 0 &lt; \u03BB &lt; 1 it is compressed. If \u03BB is negative the vector points in the opposite direction. If \u03BB = 0 the eigenvector is in the null space of A."/>
+                   text="If &#x03BB; > 1 the vector is stretched. If 0 &lt; &#x03BB; &lt; 1 it is compressed. If &#x03BB; is negative the vector points in the opposite direction. If &#x03BB; = 0 the eigenvector is in the null space of A."/>
         </VBox>
 
         <Label wrapText="true" style="-fx-font-size: 14; -fx-text-fill: #4A5568; -fx-line-spacing: 4;"
-               text="To find the eigenvalues of a matrix A, we rearrange the equation as (A - \u03BBI)v = 0. For this to have a non-zero solution, the matrix (A - \u03BBI) must be singular -- meaning its determinant must be zero."/>
+               text="To find the eigenvalues of a matrix A, we rearrange the equation as (A - &#x03BB;I)v = 0. For this to have a non-zero solution, the matrix (A - &#x03BB;I) must be singular -- meaning its determinant must be zero."/>
 
         <!-- Characteristic Equation Box -->
         <VBox style="-fx-background-color: #E8F5E9; -fx-background-radius: 12; -fx-padding: 16;">
             <Label text="CHARACTERISTIC EQUATION" style="-fx-font-size: 11; -fx-font-weight: bold; -fx-text-fill: #2E7D32;"/>
-            <Label text="det(A - \u03BBI) = 0" style="-fx-font-size: 20; -fx-font-weight: bold; -fx-text-fill: #2B3674;"/>
+            <Label text="det(A - &#x03BB;I) = 0" style="-fx-font-size: 20; -fx-font-weight: bold; -fx-text-fill: #2B3674;"/>
         </VBox>
     </VBox>
 
@@ -94,7 +94,7 @@
             <Label text="MY NOTES" style="-fx-font-size: 11; -fx-font-weight: bold; -fx-text-fill: #8F9BBA;"/>
             <TextArea fx:id="noteArea" promptText="Take notes here..." prefRowCount="5"
                       style="-fx-background-color: #FFF8E1; -fx-border-color: transparent; -fx-font-size: 12;"
-                      text="det(A - \u03BBI) = 0&#10;&#10;For 2x2:&#10;\u03BB\u00B2 - tr(A)\u03BB + det(A) = 0"/>
+                      text="det(A - &#x03BB;I) = 0&#10;&#10;For 2x2:&#10;&#x03BB;&#x00B2; - tr(A)&#x03BB; + det(A) = 0"/>
             <Button text="Save note" style="-fx-background-color: #E07B4C; -fx-text-fill: white; -fx-background-radius: 10; -fx-padding: 8 16; -fx-font-weight: bold; -fx-cursor: hand;"/>
         </VBox>
 

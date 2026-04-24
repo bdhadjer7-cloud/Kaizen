@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox xmlns:fx="http://javafx.com/fxml" fx:controller="controller.ResourcesContentController" spacing="16">
+    <!-- Header -->
+    <HBox spacing="12" alignment="CENTER_LEFT">
+        <TextField promptText="Search resources..." styleClass="search-field" prefWidth="300"/>
+        <Region HBox.hgrow="ALWAYS"/>
+        <ComboBox promptText="Type" prefWidth="100"/>
+        <ComboBox promptText="Course" prefWidth="120"/>
+        <Button text="+ Add Resource" style="-fx-background-color: #4361EE; -fx-text-fill: white; -fx-background-radius: 12; -fx-padding: 8 16; -fx-font-weight: bold; -fx-cursor: hand;"/>
+    </HBox>
+
+    <!-- Filter tabs -->
+    <HBox spacing="12">
+        <Button text="All" styleClass="tab-btn, tab-active"/>
+        <Button text="PDF" styleClass="tab-btn"/>
+        <Button text="Links" styleClass="tab-btn"/>
+        <Button text="AI Tools" styleClass="tab-btn"/>
+        <Button text="Videos" styleClass="tab-btn"/>
+        <Button text="Slides" styleClass="tab-btn"/>
+    </HBox>
+
+    <!-- Resources Grid -->
+    <FlowPane fx:id="resourceGrid" hgap="16" vgap="16"/>
+</VBox>

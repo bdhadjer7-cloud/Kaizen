@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox xmlns:fx="http://javafx.com/fxml" fx:controller="controller.RoomsContentController" spacing="16">
+    <!-- Header -->
+    <HBox spacing="12" alignment="CENTER_LEFT">
+        <TextField promptText="Search rooms..." styleClass="search-field" prefWidth="300"/>
+        <Region HBox.hgrow="ALWAYS"/>
+        <Button text="+ Create Room" onAction="#createRoom"
+                style="-fx-background-color: #4361EE; -fx-text-fill: white; -fx-background-radius: 12; -fx-padding: 8 16; -fx-font-weight: bold; -fx-cursor: hand;"/>
+    </HBox>
+
+    <!-- Filter -->
+    <HBox spacing="12">
+        <Button text="All" styleClass="tab-btn, tab-active"/>
+        <Button text="Live Now" styleClass="tab-btn"/>
+        <Button text="Scheduled" styleClass="tab-btn"/>
+        <Button text="My Rooms" styleClass="tab-btn"/>
+    </HBox>
+
+    <!-- Rooms Grid -->
+    <FlowPane fx:id="roomGrid" hgap="16" vgap="16"/>
+</VBox>

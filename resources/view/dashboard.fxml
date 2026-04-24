@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.shape.*?>
+
+<StackPane xmlns:fx="http://javafx.com/fxml" fx:controller="controller.DashboardController" fx:id="rootStack">
+    <HBox styleClass="dashboard-root">
+
+        <!-- === SIDEBAR === -->
+        <VBox fx:id="sidebar" styleClass="sidebar" spacing="2">
+            <padding><Insets top="16" bottom="16"/></padding>
+
+            <!-- Brand -->
+            <VBox alignment="CENTER_LEFT" styleClass="brand-box">
+                <padding><Insets left="20" right="20" bottom="12"/></padding>
+                <Label text="KAIZEN" styleClass="sidebar-brand-name"/>
+                <Label text="\u6539 \u5584" styleClass="sidebar-brand-jp"/>
+                <Label text="Study Platform" styleClass="sidebar-brand-sub"/>
+            </VBox>
+
+            <Separator/>
+
+            <Button fx:id="navHome" text="  \u2302  Home" styleClass="sidebar-item" onAction="#navHome"/>
+
+            <!-- Study section -->
+            <Button fx:id="navStudy" text="  \u2610  Study  \u25BE" styleClass="sidebar-item" onAction="#toggleStudy"/>
+            <VBox fx:id="studyMenu" spacing="0" managed="true" visible="true">
+                <Button fx:id="navCourses" text="        courses" styleClass="sidebar-item, sub-item" onAction="#navCourses"/>
+                <Button fx:id="navNotes" text="        notes" styleClass="sidebar-item, sub-item" onAction="#navNotes"/>
+                <Button fx:id="navResources" text="        resources" styleClass="sidebar-item, sub-item" onAction="#navResources"/>
+                <Button fx:id="navLessons" text="        lessons" styleClass="sidebar-item, sub-item" onAction="#navLessons"/>
+                <Button fx:id="navPomodoro" text="        pomodoro" styleClass="sidebar-item, sub-item" onAction="#navPomodoro"/>
+            </VBox>
+
+            <!-- Community section -->
+            <Button fx:id="navCommunity" text="  \u2609  Community  \u25BE" styleClass="sidebar-item" onAction="#toggleCommunity"/>
+            <VBox fx:id="communityMenu" spacing="0" managed="true" visible="true">
+                <Button fx:id="navFireFeed" text="        fire feed" styleClass="sidebar-item, sub-item" onAction="#navFireFeed"/>
+                <Button fx:id="navContacts" text="        contacts" styleClass="sidebar-item, sub-item" onAction="#navContacts"/>
+                <Button fx:id="navRooms" text="        rooms" styleClass="sidebar-item, sub-item" onAction="#navRooms"/>
+            </VBox>
+
+            <Button fx:id="navSettings" text="  \u2699  Settings" styleClass="sidebar-item" onAction="#navSettings"/>
+
+            <Region VBox.vgrow="ALWAYS"/>
+
+            <Button fx:id="navLogout" text="  \u2192  Log out" styleClass="sidebar-item, logout-item" onAction="#handleLogout"/>
+        </VBox>
+
+        <!-- === CONTENT === -->
+        <VBox fx:id="contentArea" HBox.hgrow="ALWAYS" styleClass="content-area">
+            <!-- Top Bar -->
+            <HBox styleClass="top-bar" alignment="CENTER_LEFT">
+                <Label fx:id="pageTitle" text="Home" styleClass="page-title"/>
+                <Region HBox.hgrow="ALWAYS"/>
+                <HBox spacing="12" alignment="CENTER_RIGHT">
+                    <Button text="\uD83D\uDD0D" styleClass="icon-btn"/>
+                    <Button text="\uD83D\uDD14" styleClass="icon-btn"/>
+                    <StackPane styleClass="avatar-circle" style="-fx-background-color: #4361EE;">
+                        <Label fx:id="avatarLabel" text="SB" style="-fx-text-fill: white; -fx-font-weight: bold; -fx-font-size: 14;"/>
+                    </StackPane>
+                </HBox>
+            </HBox>
+
+            <!-- Dynamic content container -->
+            <ScrollPane fx:id="scrollPane" fitToWidth="true" VBox.vgrow="ALWAYS" styleClass="content-scroll">
+                <StackPane fx:id="contentPane" styleClass="content-pane">
+                    <padding><Insets top="16" right="24" bottom="24" left="24"/></padding>
+                </StackPane>
+            </ScrollPane>
+        </VBox>
+    </HBox>
+</StackPane>

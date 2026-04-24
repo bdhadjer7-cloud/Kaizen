@@ -1,0 +1,66 @@
+/* ============================================
+   LOGIN / SIGNUP PAGE
+   ============================================ */
+
+.login-root { -fx-background-color: white; }
+
+.login-form-panel {
+    -fx-background-color: white;
+    -fx-max-width: 520;
+}
+
+.login-title {
+    -fx-font-size: 28px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #2B3674;
+    -fx-padding: 0 0 8 0;
+}
+
+/* Tab container */
+.tab-container { -fx-background-color: #EFF1F8; -fx-background-radius: 12; -fx-padding: 4; }
+
+/* Auth button */
+.auth-btn {
+    -fx-background-color: #C5CEE0;
+    -fx-text-fill: #E53E3E;
+    -fx-font-size: 16px;
+    -fx-font-weight: bold;
+    -fx-padding: 14 0;
+    -fx-background-radius: 14;
+    -fx-cursor: hand;
+}
+.auth-btn:hover { -fx-background-color: #B0BBCF; }
+
+/* Social buttons */
+.social-btn {
+    -fx-background-color: transparent;
+    -fx-border-color: #D0D5E0;
+    -fx-border-radius: 50; -fx-background-radius: 50;
+    -fx-min-width: 44; -fx-min-height: 44; -fx-max-width: 44; -fx-max-height: 44;
+    -fx-font-size: 16px;
+    -fx-text-fill: #2B3674;
+    -fx-cursor: hand;
+}
+.social-btn:hover { -fx-background-color: #F4F7FE; }
+
+/* Divider */
+.divider-text { -fx-text-fill: #8F9BBA; -fx-font-size: 12px; }
+.divider-row .separator .line { -fx-border-color: #D0D5E0; }
+
+/* Links */
+.forgot-link { -fx-text-fill: #8F9BBA; -fx-font-size: 12px; }
+.switch-link { -fx-text-fill: #4361EE; -fx-font-size: 12px; }
+
+/* Right panel */
+.login-illust-panel {
+    -fx-background-color: #B8C4DB;
+    -fx-min-width: 460;
+    -fx-max-width: 520;
+}
+
+.brand-title { -fx-font-size: 36px; -fx-font-weight: bold; -fx-text-fill: #3B4B6B; }
+.brand-jp { -fx-font-size: 48px; -fx-font-weight: bold; -fx-text-fill: #3B4B6B; }
+.brand-subtitle { -fx-font-size: 14px; -fx-text-fill: #5A6B8A; }
+
+/* Tab button active/inactive */
+.tab-inactive { -fx-background-color: transparent; -fx-text-fill: #8F9BBA; }

@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<HBox xmlns:fx="http://javafx.com/fxml" fx:controller="controller.LessonsContentController" spacing="0">
+
+    <!-- Left: Chapter Navigation -->
+    <VBox fx:id="chapterNav" spacing="0" style="-fx-min-width: 220; -fx-background-color: white; -fx-border-color: transparent #E0E5F2 transparent transparent;">
+        <padding><Insets top="16" bottom="16"/></padding>
+        <Label text="LINEAR ALGEBRA" style="-fx-font-size: 11; -fx-font-weight: bold; -fx-text-fill: #E07B4C; -fx-padding: 0 16;"/>
+        <Label text="Dr. Amina Meziane" style="-fx-font-size: 12; -fx-text-fill: #8F9BBA; -fx-padding: 0 16 8 16;"/>
+        <ProgressBar progress="0.65" prefWidth="190" style="-fx-padding: 0 16;"/>
+        <Label text="65% complete . 13 / 20 lessons" style="-fx-font-size: 10; -fx-text-fill: #8F9BBA; -fx-padding: 4 16 12 16;"/>
+        <Separator/>
+        <VBox fx:id="chapterList" spacing="0"/>
+        <Separator/>
+        <Label text="FILES" style="-fx-font-size: 11; -fx-font-weight: bold; -fx-text-fill: #8F9BBA; -fx-padding: 12 16 4 16;"/>
+        <Hyperlink text="Ch3 Notes.pdf" style="-fx-padding: 2 16;"/>
+        <Hyperlink text="Video lecture" style="-fx-padding: 2 16;"/>
+        <Hyperlink text="Formula sheet" style="-fx-padding: 2 16;"/>
+    </VBox>
+
+    <!-- Center: Lesson Content -->
+    <VBox spacing="16" HBox.hgrow="ALWAYS">
+        <padding><Insets top="16" right="24" bottom="16" left="24"/></padding>
+
+        <!-- Breadcrumb -->
+        <HBox spacing="8" alignment="CENTER_LEFT">
+            <Hyperlink text="Courses"/>
+            <Label text=">" style="-fx-text-fill: #8F9BBA;"/>
+            <Hyperlink text="Linear Algebra"/>
+            <Label text=">" style="-fx-text-fill: #8F9BBA;"/>
+            <Label text="Chapter 3" style="-fx-text-fill: #2B3674; -fx-font-weight: bold;"/>
+            <Region HBox.hgrow="ALWAYS"/>
+            <Label text="+20 XP on complete" style="-fx-background-color: #E8F5E9; -fx-text-fill: #2E7D32; -fx-padding: 4 12; -fx-background-radius: 20; -fx-font-size: 11;"/>
+            <Button text="Mark complete" style="-fx-background-color: #4361EE; -fx-text-fill: white; -fx-background-radius: 12; -fx-padding: 8 16; -fx-font-weight: bold; -fx-cursor: hand;"/>
+        </HBox>
+
+        <Label text="Eigenvalues &amp; Eigenvectors" style="-fx-font-size: 24; -fx-font-weight: bold; -fx-text-fill: #2B3674;"/>
+        <Label text="12 min read  .  Linear Algebra  .  Intermediate" style="-fx-font-size: 12; -fx-text-fill: #8F9BBA;"/>
+
+        <Label wrapText="true" style="-fx-font-size: 14; -fx-text-fill: #4A5568; -fx-line-spacing: 4;"
+               text="An eigenvector of a square matrix A is a non-zero vector v such that multiplying A by v only changes the scale of v, never its direction. The scalar \u03BB by which it is scaled is called the eigenvalue."/>
+
+        <!-- Core Definition Box -->
+        <VBox style="-fx-background-color: #E8F5E9; -fx-background-radius: 12; -fx-padding: 16;">
+            <Label text="CORE DEFINITION" style="-fx-font-size: 11; -fx-font-weight: bold; -fx-text-fill: #2E7D32;"/>
+            <Label text="A\u00B7v = \u03BB\u00B7v" style="-fx-font-size: 20; -fx-font-weight: bold; -fx-text-fill: #2B3674;"/>
+        </VBox>
+
+        <Label wrapText="true" style="-fx-font-size: 14; -fx-text-fill: #4A5568; -fx-line-spacing: 4;"
+               text="Think of it this way: most vectors get rotated when you multiply them by a matrix. Eigenvectors are special -- they only get stretched or compressed, never tilted. The eigenvalue \u03BB tells you exactly"/>
+
+        <!-- Info box -->
+        <VBox style="-fx-background-color: #FFF8E1; -fx-background-radius: 12; -fx-padding: 16; -fx-border-color: #FFE082; -fx-border-radius: 12;">
+            <Label wrapText="true" style="-fx-font-size: 13; -fx-text-fill: #4A5568;"
+                   text="If \u03BB > 1 the vector is stretched. If 0 &lt; \u03BB &lt; 1 it is compressed. If \u03BB is negative the vector points in the opposite direction. If \u03BB = 0 the eigenvector is in the null space of A."/>
+        </VBox>
+
+        <Label wrapText="true" style="-fx-font-size: 14; -fx-text-fill: #4A5568; -fx-line-spacing: 4;"
+               text="To find the eigenvalues of a matrix A, we rearrange the equation as (A - \u03BBI)v = 0. For this to have a non-zero solution, the matrix (A - \u03BBI) must be singular -- meaning its determinant must be zero."/>
+
+        <!-- Characteristic Equation Box -->
+        <VBox style="-fx-background-color: #E8F5E9; -fx-background-radius: 12; -fx-padding: 16;">
+            <Label text="CHARACTERISTIC EQUATION" style="-fx-font-size: 11; -fx-font-weight: bold; -fx-text-fill: #2E7D32;"/>
+            <Label text="det(A - \u03BBI) = 0" style="-fx-font-size: 20; -fx-font-weight: bold; -fx-text-fill: #2B3674;"/>
+        </VBox>
+    </VBox>
+
+    <!-- Right Sidebar -->
+    <VBox spacing="16" style="-fx-min-width: 220; -fx-max-width: 240;">
+        <padding><Insets top="16" right="16"/></padding>
+
+        <!-- XP Widget -->
+        <VBox styleClass="card" alignment="CENTER" spacing="4">
+            <Label text="2,840" style="-fx-font-size: 22; -fx-font-weight: bold; -fx-text-fill: #4361EE;"/>
+            <Label text="Total XP . Scholar" style="-fx-font-size: 10; -fx-text-fill: #8F9BBA;"/>
+            <ProgressBar progress="0.85" prefWidth="180"/>
+        </VBox>
+
+        <!-- Chapter Quiz -->
+        <VBox styleClass="card" spacing="8">
+            <Label text="CHAPTER QUIZ" style="-fx-font-size: 11; -fx-font-weight: bold; -fx-text-fill: #8F9BBA;"/>
+            <VBox style="-fx-background-color: #F4F7FE; -fx-background-radius: 12; -fx-padding: 12;">
+                <Label text="Eigenvalues Quiz" style="-fx-font-size: 14; -fx-font-weight: bold; -fx-text-fill: #2B3674;"/>
+                <Label text="8 questions . Unlocks after this lesson" style="-fx-font-size: 11; -fx-text-fill: #8F9BBA;"/>
+                <Button text="Locked" style="-fx-background-color: #C8E6C9; -fx-text-fill: #2E7D32; -fx-background-radius: 10; -fx-padding: 6 16; -fx-font-size: 12;"/>
+            </VBox>
+        </VBox>
+
+        <!-- My Notes -->
+        <VBox styleClass="card" spacing="8">
+            <Label text="MY NOTES" style="-fx-font-size: 11; -fx-font-weight: bold; -fx-text-fill: #8F9BBA;"/>
+            <TextArea fx:id="noteArea" promptText="Take notes here..." prefRowCount="5"
+                      style="-fx-background-color: #FFF8E1; -fx-border-color: transparent; -fx-font-size: 12;"
+                      text="det(A - \u03BBI) = 0&#10;&#10;For 2x2:&#10;\u03BB\u00B2 - tr(A)\u03BB + det(A) = 0"/>
+            <Button text="Save note" style="-fx-background-color: #E07B4C; -fx-text-fill: white; -fx-background-radius: 10; -fx-padding: 8 16; -fx-font-weight: bold; -fx-cursor: hand;"/>
+        </VBox>
+
+        <!-- Lesson Progress -->
+        <VBox styleClass="card" spacing="4">
+            <Label text="LESSON PROGRESS" style="-fx-font-size: 11; -fx-font-weight: bold; -fx-text-fill: #8F9BBA;"/>
+            <HBox spacing="16">
+                <VBox><Label text="This chapter" style="-fx-font-size: 12; -fx-text-fill: #2B3674;"/></VBox>
+                <Region HBox.hgrow="ALWAYS"/>
+                <Label text="1 / 5" style="-fx-font-size: 12; -fx-font-weight: bold; -fx-text-fill: #2B3674;"/>
+            </HBox>
+            <HBox spacing="16">
+                <VBox><Label text="Full course" style="-fx-font-size: 12; -fx-text-fill: #2B3674;"/></VBox>
+                <Region HBox.hgrow="ALWAYS"/>
+                <Label text="13 / 20" style="-fx-font-size: 12; -fx-font-weight: bold; -fx-text-fill: #2B3674;"/>
+            </HBox>
+        </VBox>
+    </VBox>
+</HBox>

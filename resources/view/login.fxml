@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<StackPane xmlns:fx="http://javafx.com/fxml" fx:controller="controller.LoginController">
+    <HBox alignment="CENTER" spacing="0" styleClass="login-root">
+
+        <!-- Left Panel - Form -->
+        <VBox alignment="TOP_CENTER" spacing="14" styleClass="login-form-panel" HBox.hgrow="ALWAYS">
+            <padding><Insets top="40" right="60" bottom="40" left="60"/></padding>
+
+            <Label fx:id="titleLabel" text="Welcome Back!" styleClass="login-title"/>
+
+            <HBox alignment="CENTER" spacing="0" styleClass="tab-container">
+                <Button fx:id="loginTab" text="Log in" styleClass="tab-btn, tab-active" onAction="#switchToLogin"/>
+                <Button fx:id="signupTab" text="Sign up" styleClass="tab-btn" onAction="#switchToSignup"/>
+            </HBox>
+
+            <!-- Login Form -->
+            <VBox fx:id="loginForm" spacing="12" alignment="CENTER">
+                <padding><Insets top="8"/></padding>
+                <TextField fx:id="usernameField" promptText="Username" styleClass="auth-field" prefWidth="340"/>
+                <PasswordField fx:id="passwordField" promptText="Password" styleClass="auth-field" prefWidth="340"/>
+                <Hyperlink text="forget your password?" styleClass="forgot-link"/>
+                <Label fx:id="loginError" visible="false" managed="false"/>
+                <Button text="Log In" styleClass="auth-btn" onAction="#handleLogin" prefWidth="340"/>
+                <HBox alignment="CENTER" spacing="12" styleClass="divider-row">
+                    <Separator prefWidth="100"/>
+                    <Label text="or continue with" styleClass="divider-text"/>
+                    <Separator prefWidth="100"/>
+                </HBox>
+                <HBox alignment="CENTER" spacing="24">
+                    <Button text="f" styleClass="social-btn"/>
+                    <Button text="G" styleClass="social-btn"/>
+                    <Button text="GH" styleClass="social-btn"/>
+                </HBox>
+                <Hyperlink text="don't have an account? Sign up" styleClass="switch-link" onAction="#switchToSignup"/>
+            </VBox>
+
+            <!-- Signup Form -->
+            <VBox fx:id="signupForm" spacing="12" alignment="CENTER" visible="false" managed="false">
+                <padding><Insets top="8"/></padding>
+                <TextField fx:id="nameField" promptText="enter your name" styleClass="auth-field" prefWidth="340"/>
+                <TextField fx:id="emailField" promptText="email@gmail.com" styleClass="auth-field" prefWidth="340"/>
+                <PasswordField fx:id="newPasswordField" promptText="enter your password" styleClass="auth-field" prefWidth="340"/>
+                <PasswordField fx:id="confirmPasswordField" promptText="renter your password" styleClass="auth-field" prefWidth="340"/>
+                <HBox alignment="CENTER" spacing="40">
+                    <RadioButton fx:id="studentRadio" text="Student"/>
+                    <RadioButton fx:id="teacherRadio" text="Teacher"/>
+                </HBox>
+                <Label fx:id="signupError" visible="false" managed="false"/>
+                <Button text="Sign up" styleClass="auth-btn" onAction="#handleSignup" prefWidth="340"/>
+                <HBox alignment="CENTER" spacing="12" styleClass="divider-row">
+                    <Separator prefWidth="100"/>
+                    <Label text="or continue with" styleClass="divider-text"/>
+                    <Separator prefWidth="100"/>
+                </HBox>
+                <HBox alignment="CENTER" spacing="24">
+                    <Button text="f" styleClass="social-btn"/>
+                    <Button text="G" styleClass="social-btn"/>
+                    <Button text="GH" styleClass="social-btn"/>
+                </HBox>
+                <Hyperlink text="already have an account? Log in" styleClass="switch-link" onAction="#switchToLogin"/>
+            </VBox>
+        </VBox>
+
+        <!-- Right Panel - Illustration -->
+        <VBox alignment="CENTER" spacing="12" styleClass="login-illust-panel" HBox.hgrow="ALWAYS">
+            <Label text="K a i z e n" styleClass="brand-title"/>
+            <Label text="\u6539 \u5584" styleClass="brand-jp"/>
+            <Label text="Continuous Improvement" styleClass="brand-subtitle"/>
+            <Region prefHeight="20"/>
+            <ImageView fx:id="mascotImage" fitHeight="280" preserveRatio="true"/>
+        </VBox>
+    </HBox>
+</StackPane>

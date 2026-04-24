@@ -1,0 +1,52 @@
+/* ============================================
+   DASHBOARD LAYOUT WITH SIDEBAR
+   ============================================ */
+
+.dashboard-root { -fx-background-color: #EFF1F8; }
+
+/* --- Sidebar --- */
+.sidebar {
+    -fx-background-color: white;
+    -fx-min-width: 180; -fx-pref-width: 180; -fx-max-width: 200;
+    -fx-border-color: transparent #E0E5F2 transparent transparent;
+    -fx-border-width: 0 1 0 0;
+}
+
+.brand-box { -fx-padding: 0 0 8 0; }
+.sidebar-brand-name { -fx-font-size: 18px; -fx-font-weight: bold; -fx-text-fill: #2B3674; }
+.sidebar-brand-jp { -fx-font-size: 10px; -fx-text-fill: #8F9BBA; }
+.sidebar-brand-sub { -fx-font-size: 10px; -fx-text-fill: #4361EE; -fx-font-weight: bold; }
+
+.sidebar-item {
+    -fx-background-color: transparent;
+    -fx-text-fill: #8F9BBA;
+    -fx-font-size: 13px;
+    -fx-padding: 8 16;
+    -fx-alignment: CENTER_LEFT;
+    -fx-cursor: hand;
+    -fx-background-radius: 0 10 10 0;
+    -fx-max-width: 176;
+    -fx-pref-width: 176;
+}
+.sidebar-item:hover { -fx-background-color: #F4F7FE; -fx-text-fill: #2B3674; }
+.sidebar-active { -fx-background-color: #E8ECF8; -fx-text-fill: #4361EE; -fx-font-weight: bold; }
+
+.sub-item { -fx-font-size: 12px; -fx-padding: 6 16 6 28; }
+.sidebar-section-toggle { -fx-font-weight: bold; }
+.logout-item { -fx-text-fill: #E53E3E; }
+.logout-item:hover { -fx-background-color: #FFEBEE; -fx-text-fill: #C62828; }
+
+/* --- Content Area --- */
+.content-area { -fx-background-color: #EFF1F8; }
+.content-scroll { -fx-background-color: transparent; -fx-border-color: transparent; }
+.content-pane { -fx-background-color: transparent; }
+
+/* --- Top Bar --- */
+.top-bar {
+    -fx-padding: 12 24;
+    -fx-background-color: transparent;
+}
+.page-title { -fx-font-size: 22px; -fx-font-weight: bold; -fx-text-fill: #2B3674; }
+
+/* --- Sidebar Separator --- */
+.sidebar .separator .line { -fx-border-color: #E0E5F2; }
